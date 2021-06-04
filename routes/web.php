@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\PostController;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use App\Models\Post;
-use App\Models\Visits;
+use App\Http\Controllers\WpuserController;
+use Inertia\Inertia;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,17 @@ use App\Models\Visits;
 */
 
 Route::get('/', function () {
-    return view('welcome',[
-        'posts'=>Visits::type('user')->get()
+    return Inertia::render('Landing', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
     ]);
 });
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/users', [WpuserController::class , 'index']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->name('dashboard');
