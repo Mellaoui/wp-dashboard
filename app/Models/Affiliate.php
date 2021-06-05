@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Wpuser extends Model
+class Affiliate extends Model
 {
     use HasFactory;
     protected $connection = 'wordpress';
-    protected $table = 'users';
+    protected $table = 'affiliate_wp_affiliates';
 
+    
 }

@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WpuserController;
+use App\Http\Controllers\AffiliateController;
 use Inertia\Inertia;
 
 /*
@@ -27,6 +28,8 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/users', [WpuserController::class , 'index']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/affiliates', [AffiliateController::class , 'index'])->name('affiliate');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');

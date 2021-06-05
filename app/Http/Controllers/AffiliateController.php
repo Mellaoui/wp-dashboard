@@ -9,13 +9,13 @@ use App\Models\Affiliate;
 use App\Models\Wpuser;
 
 use Inertia\Inertia;
-class WpuserController extends Controller
+class AffiliateController extends Controller
 {
     
     public function index(){
-        return inertia('Dashboard/index',[
-            'wp_users' => Wpuser::all(),
-            'wp_affliates'=>Affiliate::all()
+        return inertia('Myaffiliates/affiliate',[
+            
+            'wp_affiliates'=>Affiliate::all()
         ]);
     }
 
