@@ -27,7 +27,7 @@ Route::get('/', function () {
 });
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/users', [WpuserController::class , 'index']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/users', [WpuserController::class , 'index'])->name('main');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/affiliates', [AffiliateController::class , 'index'])->name('affiliate');
 

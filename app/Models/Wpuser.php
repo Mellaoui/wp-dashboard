@@ -12,4 +12,10 @@ class Wpuser extends Model
     protected $connection = 'wordpress';
     protected $table = 'users';
 
+    public function affiliate(){
+
+        return $this->hasOne(Affiliate::class);
+
+    }
+
 }
