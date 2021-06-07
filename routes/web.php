@@ -18,7 +18,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Landing', [
+    return Inertia::render('Auth/Login', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -27,10 +27,11 @@ Route::get('/', function () {
 });
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/users', [WpuserController::class , 'index'])->name('main');
+Route::middleware(['auth:sanctum', 'verified'])->get('/', [WpuserController::class , 'index'])->name('main');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/affiliates', [AffiliateController::class , 'index'])->name('affiliate');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+/*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+*/
