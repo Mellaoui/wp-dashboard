@@ -125,7 +125,10 @@
                                                     </div>
     
                                                     <div class="ml-4">
-                                                        <div class="text-sm leading-5 font-medium text-gray-900">{{ user.user_nicename  }}
+                                                        <div class="text-sm leading-5 font-medium text-gray-900">
+                                                            <inertia-link :href="route('affiliate',{affiliate})">
+                                                            {{ user.user_nicename  }}
+                                                            </inertia-link>
                                                         </div>
                                                         <div class="text-sm leading-5 text-gray-500">{{ user.user_email }}</div>
                                                     </div>
