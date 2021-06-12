@@ -29,7 +29,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/', [WpuserController::class , 'index'])->name('main');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/affiliates/{affiliate:id}', [AffiliateController::class , 'show'])->name('affiliate');
+Route::middleware(['auth:sanctum', 'verified'])->get('/affiliates', [AffiliateController::class , 'show'])->name('affiliate');
 
 /*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
