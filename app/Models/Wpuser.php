@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Wpuser extends Model
 {
     use HasFactory;
-    protected $connection = 'wordpress';
-    protected $table = 'users';
+    //protected $connection = 'wordpress';
+    protected $table = 'wp_users';
 
     public function affiliate(){
 

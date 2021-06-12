@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Affiliate extends Model
 {
     use HasFactory;
-    protected $connection = 'wordpress';
-    protected $table = 'affiliate_wp_affiliates';
+    //protected $connection = 'wordpress';
+    protected $table = 'wp_affiliate_wp_affiliates';
 
     public function wpuser(){
         
